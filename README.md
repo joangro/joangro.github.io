@@ -4,6 +4,10 @@
 - This is a generated repo from [amitmerchant1990/reverie](https://github.com/amitmerchant1990/reverie)
 - I will use this to write up stuff about what I find interesting or useful on my day to day job, and share it publicly.
 
+# Original repo information
+
+Below you can see the original repo information and links, leaving it as a reference.
+
 ## Features overview
 
 - Clean and minimal design
