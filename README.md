@@ -1,23 +1,8 @@
-<h1 align="center">
-  <br>
-  <img src="/images/reverie-text.png" alt="Reverie" width="200"/>
-  <br>
-  <p align="center">
-  <a href="https://ko-fi.com/Y8Y2QC9Y"><img src="https://www.ko-fi.com/img/githubbutton_sm.svg" alt="Ko-fi" width="200"/></a>
-  </p>
-</h1>
+# Personal blog
 
-Reverie is a [Jekyll](https://jekyllrb.com/)-powered theme which is simple and opinionated. It's actually a fork of [jekyll-now](https://github.com/barryclark/jekyll-now) with some additional features and personal touches which I've implemented to suit my needs for my blog.
-
-> [Theme demo](https://www.amitmerchant.com/reverie/introducing-reverie-jekyll-theme/)
-
-This is a plug-and-play Jekyll theme best suited to use on [GitHub Pages](https://pages.github.com) without even setting up a local environment.
-
-![](/images/reverie-demo.png)
-
-|  Responsiveness            |  Search | Categories |
-|---------------------|----------------------|----------------------|
-|![Responsiveness](/images/mobile-demo.png) | ![search](/images/search.png) | ![categories](/images/categories.png) |
+- View live at [blog.graunoel.com](http://blog.graunoel.com/)
+- This is a generated repo from [amitmerchant1990/reverie](https://github.com/amitmerchant1990/reverie)
+- I will use this to write up stuff about what I find interesting or useful on my day to day job, and share it publicly.
 
 ## Features overview
 
@@ -43,28 +28,6 @@ This is a plug-and-play Jekyll theme best suited to use on [GitHub Pages](https:
 
 > <p><i>Like this theme?</i> Become a patreon to support my open source work <p>
 > <a href="https://www.patreon.com/amitmerchant"><img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160"></a>
-
-## Using Reverie on GitHub Pages
-
-### 1. Fork Reverie to your User Repository
-
-Fork this repository, then rename the repository to `yourgithubusername.github.io`.
-
-Alternatively, you can click the [`Use this template`](https://github.com/amitmerchant1990/reverie/generate) button if you want to create a repository with a clean commit history which will use Reverie as a template.
-
-Your Jekyll blog will often be viewable immediately at <https://yourgithubusername.github.io> (if it's not, you can often force it to build by completing step 2).
-
-### 2. Customize and view your site
-
-Enter your site name, description, avatar and many other options by editing the `_config.yml` file. You can easily turn on Google Analytics tracking, Disqus commenting and social icons here.
-
-Making a change to `_config.yml` (or any file in your repository) will force GitHub Pages to rebuild your site with Jekyll. Your rebuilt site will be viewable a few seconds later at <https://yourgithubusername.github.io> - if not, give it ten minutes as GitHub suggests and it'll appear soon.
-
-### 3. Publish your first blog post
-
-Create a new file called `/_posts/2019-2-13-Hello-World.md` to publish your first blog post. That's all you need to do to publish your first blog post! This [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) might come in handy while writing the posts.
-
-> You can add additional posts in the browser on GitHub.com too! Just hit the <kbd>Create new file</kbd> button in `/_posts/` to create new content. Just make sure to include the [front-matter](http://jekyllrb.com/docs/frontmatter/) block at the top of each new blog post and make sure the post's filename is in this format: year-month-day-title.md
 
 ## Using Categories in Reverie
 
