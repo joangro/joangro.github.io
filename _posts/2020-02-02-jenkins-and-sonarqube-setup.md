@@ -4,8 +4,6 @@ title: Optimizing a Jenkins and Sonarqube instance in GCP - Part I
 categories: [Jenkins, Sonarqube, GCP, Cloud, VM]
 ---
 
-## Preface
-
 On the latest years, there has been a steady increase on more demanding and more specialized tooling for the day-to-day DevOps tasks. However, there are tools that have proven to stand the test of time, and have evolved to be touchstones on development-centered teams. This is the case of Jenkins, which after so many years is still being used to build and implement modern CI/CD pipelines.
 
 Some other, and slightly more recent tooling, such as [Sonarqube](https://www.sonarqube.org/) is also still used to the date, and it's needed to tackle other specific issues on the DevOps cicle of development and integration. 
