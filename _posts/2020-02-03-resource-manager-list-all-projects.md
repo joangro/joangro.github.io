@@ -23,7 +23,8 @@ So that means that if we have visibility on more than one organization, we will 
 You might think to use some flag to filter the organization that we want. Let's use the same command again, but this time we will filter by a specific Organization ID:
 
 ```
-gcloud projects list --filter 'parent.type="organization" AND parent.id="[MY-ORGANIZATION-ID]"' 
+gcloud projects list \
+    --filter 'parent.type="organization" AND parent.id="[MY-ORGANIZATION-ID]"' 
 
 ```
 
@@ -51,7 +52,7 @@ export GOOGLE_APPLICATION_CREDENTIALS=/absolute-path-to-my-key/key.json
 
 Then, we can start to write our code with:
 
-```
+```python
 from googleapiclient.discovery import build
 import google.auth
 
@@ -65,7 +66,7 @@ Now, we will need to use the `googleapiclient` module to create our API clients.
 
 The code will follow up like this:
 
-```
+```python
 rm_v1_client = build('cloudresourcemanager', 'v1', credentials=credentials, cache_discovery=False)
 
 rm_v2_client = build('cloudresourcemanager', 'v2', credentials=credentials, cache_discovery=False)
@@ -73,13 +74,13 @@ rm_v2_client = build('cloudresourcemanager', 'v2', credentials=credentials, cach
 
 Now, in the code we have to put the **parent** that we want to use to list all of our projects. For example, if it's an organization, do this:
 
-```
+```python
 PARENT_ID="organizations/[MY-ORGANIZATION-ID]"
 ```
 
 If it's a folder, instead add this:
 
-```
+```python
 PARENT_ID="folders/[MY-FOLDER-ID]"
 ```
 
@@ -87,7 +88,8 @@ Now, for the following steps, we will have to list all the projects on the paren
 
 
 The whole code can look like this:
-```
+
+```python
 from googleapiclient.discovery import build
 import google.auth
 
