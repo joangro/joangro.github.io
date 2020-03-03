@@ -1,6 +1,6 @@
 ---
 layout: post
-title: GCP Resource Manager: Listing everything
+title: GCP Resource Manager\: Listing everything
 categories: [GCP, Resource Manager API, Python]
 ---
 
