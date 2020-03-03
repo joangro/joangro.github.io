@@ -25,7 +25,6 @@ You might think to use some flag to filter the organization that we want. Let's 
 ```
 gcloud projects list \
     --filter 'parent.type="organization" AND parent.id="[MY-ORGANIZATION-ID]"' 
-
 ```
 
 Note that the organization ID is an uniquely identifying number, not the name of the organization that we want to filter! We can find it through the console, or by using the following command `gcloud organizations list --filter 'displayName="[MY-ORGANIZATION-NAME]"'` and copying the ID from the output.
