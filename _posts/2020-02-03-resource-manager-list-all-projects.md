@@ -4,7 +4,7 @@ title: GCP Resource Manager: Listing everything
 categories: [GCP, Resource Manager API, Python]
 ---
 
-[Resource Manager](https://cloud.google.com/resource-manager) is a very powerful service in GCP, that allows creating, modifying, deleting and listing (in essence, all what a CRUD model needs to do) over HTTP. The API allows to manage different resources that build the hierarchical structure of projects and resources in GCP, such as Organizations, Folders, and Projects, among others.
+This post is focused on [Resource Manager](https://cloud.google.com/resource-manager), which is a very powerful service in GCP, that allows creating, modifying, deleting and listing GCP resources (in essence, all what a CRUD model needs to do) over HTTP. The API allows to manage different resources that build the hierarchical structure of projects and resources in GCP, such as Organizations, Folders, and Projects, among others.
 
 Another important use of the Resource Manager is that it allows to set and retrieve the IAM settings on those resources.
 
