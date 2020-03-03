@@ -74,7 +74,7 @@ gcloud beta compute instances create $VM_NAME \
 	--image-project=debian-cloud \
 	--boot-disk-size=10GB \
 	--boot-disk-type=pd-standard \
-	--boot-disk-device-name=instance-1 \
+	--boot-disk-device-name=$VM_NAME \
 	--disk=name=$VM_NAME-db,device-name=$VM_NAME-db,mode=rw,boot=no \
 	--disk=name=$VM_NAME-sonarqube,device-name=$VM_NAME-sonarqube,mode=rw,boot=no
 ```
