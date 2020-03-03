@@ -54,7 +54,7 @@ gcloud beta compute disks create $VM_NAME-sonarqube \
 Create disk for Postgres:
 
 ```
-gcloud beta compute disks create $VM_NAME-sonarqube \
+gcloud beta compute disks create $VM_NAME-db \
 	--type=pd-ssd \
 	--size=10GB \
 	--zone=$ZONE
