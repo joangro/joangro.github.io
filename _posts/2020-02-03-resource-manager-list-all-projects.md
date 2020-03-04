@@ -12,15 +12,15 @@ However, this post is focused on retrieving information about our projects, when
 
 ## The "issue"
 
-Although the API has all of the needed features to manage our projects via a REST interface, it's missing some higer level features to, for example, list all the projects under an organization. 
+Although the API has all of the needed features to manage our projects via a REST interface, it's missing some higer level features to, for example, listing all the projects under an organization, no matter under which hiererchical branch are they into. 
 
-There is a command that seems to helm here, which is the [`gcloud projects list`](https://cloud.google.com/sdk/gcloud/reference/projects/list) on the Google Cloud SDK, however, as stated in the documentation:
+There is a command that seems to help here, which is the [`gcloud projects list`](https://cloud.google.com/sdk/gcloud/reference/projects/list) on the Google Cloud SDK, however, as stated in the documentation:
 
 > (The `gcloud projects list` command) Lists all active projects, where the active account has Owner, Editor or Viewer permissions"
 
 So that means that if we have visibility on more than one organization, we will see all the projects on the same list no matter on which organization they are.
 
-You might think to use some flag to filter the organization that we want. Let's use the same command again, but this time we will filter by a specific Organization ID:
+We might think to use some flag to filter the organization that we want. Let's use the same command again, but this time we will filter by a specific Organization ID:
 
 ```
 gcloud projects list \
@@ -33,11 +33,11 @@ We will receive less projects on the response, in case that we had visibility on
 
 However, there is an issue here:
 
-**If the organization has folders, the command won't search inside of them, therefore, if under an organization there is one or more folders, we won't be able to see them from the previous output, even if they are on the hierarchy under the organization!**
+**If the organization has folders, the command won't search for projects inside of them, therefore, if there is one or more folders under an organization, we will miss the projects that these folders contain, even if they are on the hierarchy under the organization!**
 
 ## The solution
 
-As I mentioned before, although the API doesn't directly provide us with the specific call that we need, we can use its resources to create a quick way to do what we need. Since I like Python, we can do calls to the Resource Manager API by using the [Google API Python client](https://github.com/googleapis/google-api-python-client).
+As I mentioned before, although the API doesn't directly provide us with the specific method that we need, we can use its resources to create a quick way to do what we need. Since I like Python, we can do calls to the Resource Manager API by using the [Google API Python client](https://github.com/googleapis/google-api-python-client).
 
 We will also need a way to authenticate our calls to the API, we can use the [Google Auth Python Library](https://github.com/googleapis/google-auth-library-python) libraries for that regard.
 
@@ -94,8 +94,11 @@ import google.auth
 
 credentials, _ = google.auth.default()
 
-rm_v1_client = build('cloudresourcemanager', 'v1', credentials=credentials, cache_discovery=False) # Needed to call all methods except for the ones related to folders
-rm_v2_client = build('cloudresourcemanager', 'v2', credentials=credentials, cache_discovery=False) # Needed to call folder-related methods
+# V1 is needed to call all methods except for the ones related to folders
+rm_v1_client = build('cloudresourcemanager', 'v1', credentials=credentials, cache_discovery=False) 
+
+# V2 is needed to call folder-related methods
+rm_v2_client = build('cloudresourcemanager', 'v2', credentials=credentials, cache_discovery=False) 
 
 ORGANIZATION_ID = '[MY-ORG-ID]'
 
@@ -141,5 +144,6 @@ if __name__=='__main__':
     print(listAllProjects())
 ```
 
-This will do the trick in order to list all of the projects under an organization.
+By running this script, we will be able to search for any project inside the organization, no matter if the project is inside a folder, or if a folder is inside of another folder.
 
+One use of this, is if we for example want to retrieve all the users that have visibility on the projects of our organization, or if we want to audit them and later make some change(s).
