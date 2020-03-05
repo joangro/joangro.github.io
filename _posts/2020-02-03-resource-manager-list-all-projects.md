@@ -104,13 +104,15 @@ ORGANIZATION_ID = '[MY-ORG-ID]'
 
 def listAllProjects():
     # Start by listing all the projects under the organization
-    projects_under_org = rm_v1_client.projects().list(filter='parent.type="organization" AND parent.id="{}"'.format(ORGANIZATION_ID)).execute()
+    filter='parent.type="organization" AND parent.id="{}"'.format(ORGANIZATION_ID)
+    projects_under_org = rm_v1_client.projects().list(filter=filter).execute()
 
     # Get all the project IDs
     all_projects = [p['projectId'] for p in projects_under_org['projects']]
 
     # Now retrieve all the folders under the organization
-    folders_under_org = rm_v2_client.folders().list(parent="organizations/"+ORGANIZATION_ID).execute()
+    parent="organizations/"+ORGANIZATION_ID
+    folders_under_org = rm_v2_client.folders().list(parent=parent).execute()
 
     # Make sure that there are actually folders under the org
     if not folders_under_org:
@@ -131,7 +133,8 @@ def listAllProjects():
             folder_ids.extend([f['name'].split('/')[1] for f in subfolders['folders']])
         
         # Now, get the projects under that folder
-        projects_under_folder = rm_v1_client.projects().list(filter='parent.type="folder" AND parent.id="{}"'.format(current_id)).execute()
+        filter='parent.type="folder" AND parent.id="{}"'.format(current_id)
+        projects_under_folder = rm_v1_client.projects().list(filter=filter).execute()
         
         # Add projects if there are any
         if projects_under_folder:
