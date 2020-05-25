@@ -33,7 +33,7 @@ We will receive less projects on the response, in case that we had visibility on
 
 However, there is an issue here:
 
-**If the organization has folders, the command won't search for projects inside of them, therefore, if there is one or more folders under an organization, we will miss the projects that these folders contain, even if they are on the hierarchy under the organization!**
+If the **organization** has **folders**, the command won't search for projects inside of them, therefore, if there is one or more folders under an organization, we will miss the projects under those folders, even if they are on the hierarchy under the organization!
 
 ## The solution
 
