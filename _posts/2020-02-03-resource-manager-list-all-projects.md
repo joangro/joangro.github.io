@@ -16,7 +16,7 @@ Although the API has all of the needed features to manage our projects via a RES
 
 There is a command that seems to help here, which is the [`gcloud projects list`](https://cloud.google.com/sdk/gcloud/reference/projects/list) on the Google Cloud SDK, however, as stated in the documentation:
 
-> "*[The `gcloud projects list` command]* lists all active projects, where the active account has Owner, Editor or Viewer permissions"
+> "The `gcloud projects list` command lists all active projects where the active account has Owner, Editor or Viewer permissions"
 
 So that means that if we have visibility on more than one organization, we will see all the projects on the same list no matter on which organization they are.
 
